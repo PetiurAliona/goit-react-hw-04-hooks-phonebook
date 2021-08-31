@@ -7,11 +7,6 @@ const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState("")
   const [number, setNumber] = useState("")
 
-  // const handleChange = (e) => {
-  //   const { value, name } = e.currentTarget
-  //   this.setState({ [name]: value })
-  // }
-
   const handleChangeName = (e) => {
     setName(e.currentTarget.value)
   }
