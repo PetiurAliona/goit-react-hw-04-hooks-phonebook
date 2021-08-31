@@ -4,7 +4,7 @@ import Filter from "./components/Filter/Filter"
 import ContactsList from "./components/ContactsList/ContactsList"
 
 const App = () => {
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem("contacts")) ?? [])
   const [filter, setFilter] = useState("")
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const App = () => {
       alert(`${contact.name} is already in contacts`)
       return false
     }
-    setContacts((contacts) => [contact, ...contacts])
+    setContacts((prev) => [contact, ...prev])
     return true
   }
 
